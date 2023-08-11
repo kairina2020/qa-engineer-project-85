@@ -1,130 +1,36 @@
 ---
 - summary: |
     Успешная регистрация с Nickname, эл.почтой и паролем
-requirement: |
-    При верном вводе Nickname, эл.почтой и пароля пользователь должен зарегистрироваться в системе.
-prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2Fgames%2F143963
-    Имеется успешно зарегистрированная электронная почта
-test-data: |
-    валидные: Nickname, адрес эл/почты, пароль 
-steps:
-    - Вводим Nickname (от 3 до 16 символов)
-    - Вводим адрес эл почты	(по шаблону %@%.%)
-    - Вводим пароль (от 3 до 16 символов)
-    - Подтверждаем пароль (от 3 до 16 символов)
-    - Нажимаем кнопку «Войти»
-expected-result: |
-    Пользователь должен перейти на страницу игры https://codebattle.hexlet.io/games/....
+status: pass
 
 - summary: |
-    Успешная регистрация через ГИТХАБ 
-requirement: |
-    При переходе по кнопке «Войти через Githab» пользователь должен зарегистрироваться в системе.
-prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2Fgames%2F143963
-    Имеется успешно зарегистрированный аккаунт на githab
-test-data: |
-steps:
-    - кнопка «Войти через Githab»
-    - на открывшейся странице авторизации, кнопка авторизоваться  	
-expected-result: |
-    Пользователь попал на страницу игры https://codebattle.hexlet.io/games/....
-    Отправляется уведомление с Githab на эл. почту «Стороннему приложению OAuth (Codebattle) с областями действия user: email недавно был разрешен доступ к вашей учетной записи»
+    Успешная регистрация через Githab
+status: pass
 
 - summary: |
    Успешная регистрация через Discord
-requirement: |
-   При переходе по кнопке «Войти через Discord» пользователь должен зарегистрироваться в системе.
-prerequisites: |
-   - Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F
-   Имеется успешно зарегистрированная аккаунт в Discord
-test-data: |
-steps:
-   Кнопка «Sign in with Discord»
-   - Окно для авторизации через Discord 
-   - Кнопка авторизоваться
-expected-result: |
-   Пользователь попал на страницу игры https://codebattle.hexlet.io/games/....
+ status: pass
 
 - summary: |
     Неуспешная регистрация с Nickname < 3 символов
-requirement: |
-    При вводе Nickname менее 3 символов появится требование «Should be from 3 to 16 characters»
-prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
-test-data: |
-    Nickname (Il), адрес эл/почты (test@tu.tu), пароль (Passw0rd!)
-steps:
-    - Вводим Nickname (Il)
-    - Вводим адрес эл почты test@tu.tu	
-    - Вводим пароль (Passw0rd!)
-    - Подтверждаем пароль (Passw0rd!)
-    - Нажимаем кнопку «Войти»
- expected-result: |
-    Появилось требование «Should be from 3 to 16 characters»
+
 
 - summary: |
     Неуспешная регистрация с Nickname > 16 символов
-requirement: |
-    При вводе Nickname более 16 символов появится требование «Should be from 3 to 16 characters»
-prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
-test-data: |
-    Nickname (Ilona_2023Ilona_2023), адрес эл/почты (test@tu.tu), пароль (Passw0rd!)
-steps:
-    - Вводим Nickname (Ilona_2023Ilona_2023)
-    - Вводим адрес эл почты test@tu.tu	
-    - Вводим пароль (Passw0rd!)
-    - Подтверждаем пароль (Passw0rd!)
-    - Нажимаем кнопку «Войти»
- expected-result: |
-    Появилось требование «Should be from 3 to 16 characters»
+ 
 
 - summary: |
     Неуспешная регистрация с Nickname кириллица
-requirement: |
-    При вводе Nickname в кириллице (от 3 до 16 символов) появится требование «Can contain letters, numbers and underscores and should begin with a Latin letter»
-prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
-test-data: |
-    Nickname (Илона_2023), адрес эл/почты (test@tu.tu), пароль (Passw0rd!)
-steps:
-    - Вводим Nickname (Илона_2023)
-    - Вводим адрес эл почты test@tu.tu	
-    - Вводим пароль (Passw0rd!)
-    - Подтверждаем пароль (Passw0rd!)
-    - Нажимаем кнопку «Войти»
-expected-result: |
-    Появилось требование «Can contain letters, numbers and underscores and should begin with a Latin letter»
+
 
 - summary: |
     Неуспешная регистрация с невалидной эл. почтой
-requirement: |
-    При вводе невалидной эл почты (не в формате %@%.%) появится требование «Invalid email»
-prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
-test-data: |
-    Nickname (Ilona_2023), адрес эл/почты (test@.tu), пароль (Passw0rd!)
-steps:
-    - Вводим Nickname (Ilona_2023)
-    - Вводим адрес эл почты test@.tu
-    - Вводим пароль (Passw0rd!)
-    - Подтверждаем пароль (Passw0rd!)
-    - Нажимаем кнопку «Войти»
-  expected-result: |
-    Появилось сообщение «Invalid email»
 
-          Nickname (Ilona_2023), адрес эл/почты (test@tu.tu), пароль (P!)
-  steps:
-    - Вводим Nickname (Ilona_2023)
-    - Вводим адрес эл почты test@tu.tu	
-    - Вводим пароль (P!)
-    - Подтверждаем пароль (P!)
-    - Нажимаем кнопку «Войти»
-  expected-result: |
-    Появилось требование «Should be from 3 to 16 characters»
 
+- summary: |
+    Неуспешная регистрация с паролем менее 3-х символов
+ 
+          
 - summary: |
     Неуспешная регистрация с Password > 16 символов
 requirement: |
