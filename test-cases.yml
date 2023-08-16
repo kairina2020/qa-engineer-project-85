@@ -4,25 +4,25 @@
   requirement: |
     При верном вводе Nickname, эл.почтой и пароля пользователь должен зарегистрироваться в системе.
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2Fgames%2F143963
+    Открыта страница регистрации
     Имеется успешно зарегистрированная электронная почта
   test-data: |
     валидные: Nickname, адрес эл/почты, пароль 
   steps:
-    1. Вводим Nickname (от 3 до 16 символов)
-    2. Вводим адрес эл почты	(по шаблону %@%.%)
-    3. Вводим пароль (от 3 до 16 символов)
-    4. Подтверждаем пароль (от 3 до 16 символов)
+    1. Вводим Nickname
+    2. Вводим адрес эл почты
+    3. Вводим пароль 
+    4. Подтверждаем пароль
     5. Нажимаем кнопку «Войти»
   expected-result: |
-    Пользователь должен перейти на страницу игры https://codebattle.hexlet.io/games/....
+    Пользователь успешно зарегистрирован
 
 - summary: |
-    Неуспешная регистрация с Nickname < 3 символов
+    Неуспешная регистрация пользователя (Nickname) 
   requirement: |
     При вводе Nickname менее 3 символов появится требование «Should be from 3 to 16 characters»
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
+    Открыта страница регистрации
   test-data: |
     Nickname (Il), адрес эл/почты (test@tu.tu), пароль (Passw0rd!)
   steps:
@@ -35,11 +35,11 @@
     Появилось требование «Should be from 3 to 16 characters»
 
 - summary: |
-    Неуспешная регистрация с Nickname > 16 символов
+    Неуспешная регистрация  пользователя (Nickname) 
   requirement: |
     При вводе Nickname более 16 символов появится требование «Should be from 3 to 16 characters»
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
+    Открыта страница регистрации
   test-data: |
     Nickname (Ilona_2023Ilona_2023), адрес эл/почты (test@tu.tu), пароль (Passw0rd!)
   steps:
@@ -52,11 +52,11 @@
     Появилось требование «Should be from 3 to 16 characters»
 
 - summary: |
-    Неуспешная регистрация с Nickname кириллица
+    Неуспешная регистрация пользователя (Nickname) 
   requirement: |
     При вводе Nickname в кириллице (от 3 до 16 символов) появится требование «Can contain letters, numbers and underscores and should begin with a Latin letter»
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
+    Открыта страница регистрации
   test-data: |
     Nickname (Илона_2023), адрес эл/почты (test@tu.tu), пароль (Passw0rd!)
   steps:
@@ -69,11 +69,11 @@
     Появилось требование «Can contain letters, numbers and underscores and should begin with a Latin letter»
 
 - summary: |
-    Неуспешная регистрация с невалидной эл. почтой
+    Неуспешная регистрация пользователя (эл. почта) 
   requirement: |
     При вводе невалидной эл почты (не в формате %@%.%) появится требование «Invalid email»
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
+    Открыта страница регистрации 
   test-data: |
     Nickname (Ilona_2023), адрес эл/почты (test@.tu), пароль (Passw0rd!)
   steps:
@@ -90,7 +90,7 @@
   requirement: |
     При вводе пароля из 2-х символов появится требование «Should be from 3 to 16 characters»
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
+    Открыта страница регистрации
   test-data: |
     Nickname (Ilona_2023), адрес эл/почты (test@tu.tu), пароль (P!)
   steps:
@@ -103,11 +103,11 @@
     Появилось требование «Should be from 3 to 16 characters»
 
 - summary: |
-    Неуспешная регистрация с Password > 16 символов
+    Неуспешная регистрация пользователя (Password) 
   requirement: |
     При вводе Password более 16 символов появится требование «Should be from 3 to 16 characters»
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
+    Открыта страница регистрации 
   test-data: |
     Nickname (Ilona_2023), адрес эл/почты (test@tu.tu), пароль (Passw0rd!Passw0rd!)
   steps:
@@ -120,11 +120,11 @@
     Появилось требование «Should be from 3 to 16 characters»
   
 - summary: |
-    Неуспешная регистрация при несовпадении пароля и подтверждения Password 
+    Неуспешная регистрация пользователя (Password) 
   requirement: |
     При вводе подтверждения пароля несовпадающего с предыдущим появится сообщение «Passwords must match»
   prerequisites: |
-    Открыта страница регистрации в системе https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
+    Открыта страница регистрации
   test-data: |
     Nickname (Ilona_2023), адрес эл/почты (test@tu.tu), пароль (Passw0rd!)
   steps:
