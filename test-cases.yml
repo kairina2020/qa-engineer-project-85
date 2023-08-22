@@ -29,7 +29,7 @@
     - Ввести пароль 
     - Подтвердить пароль 
     - Нажать кнопку Войти
- expected-result: |
+  expected-result: |
     Пользователь не зарегистрирован. Появилось требование Should be from 3 to 16 characters
 
 - summary: |
